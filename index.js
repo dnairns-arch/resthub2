@@ -4,6 +4,8 @@ let express = require('express');
 let bodyParser = require('body-parser');
 // Import Mongoose
 let mongoose = require('mongoose');
+// Import dotenv
+let dotenv = require("dotenv");
 // Initialize the app
 let app = express();
 
@@ -14,8 +16,21 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+
+// configure dotenv for use
+dotenv.config();
+
+mongoose.connect(
+    process.env.DB_CONNECT,
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    },
+    () => console.log("Connected to DB...")
+    );
+
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
+// mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
 
 // Heroku Mongoose connection
 // mongoose.connect('mongodb://heroku_5686p02g:sia8l3fni4jmu7qbn0ac1t75mf@ds349857.mlab.com:49857/heroku_5686p02g', { useNewUrlParser: true });
