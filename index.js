@@ -11,7 +11,7 @@ let app = express();
 
 // Import routes
 // let apiRoutes = require("./api-routes");
-let apiRoutes = require("./api-routes")
+let apiRoutes = require("./assessmentRoutes")
 
 // Configure bodyparser to handle post requests
 app.use(bodyParser.urlencoded({

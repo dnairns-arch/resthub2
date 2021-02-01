@@ -1,4 +1,4 @@
-const router = require("express").Router();
+var router = require("express").Router();
 
 // Import assessment model
 Assessment = require('./assessmentModel');
@@ -83,4 +83,3 @@ exports.delete = function (req, res) {
     });
 };
 
-module.exports = router;

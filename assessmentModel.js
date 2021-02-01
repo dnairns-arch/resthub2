@@ -1,10 +1,19 @@
-const mongoose = require("mongoose");
+var mongoose = require("mongoose");
 
 // Setup Assessment Schema
-var assessmentSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    assessment_data: { type: String, required: true },
-    create_date: { type: Date, default: Date.now }
+var assessmentSchema = mongoose.Schema({
+    name: {
+        type: String, 
+        required: true 
+    },
+    assessment_data: {
+        type: String, 
+        required: true 
+    },
+    create_date: {
+        type: Date, 
+        default: Date.now 
+    }
 });
 
 // Export Assessment model
