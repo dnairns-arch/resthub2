@@ -10,7 +10,9 @@ let dotenv = require("dotenv");
 let app = express();
 
 // Import routes
-let apiRoutes = require("./api-routes");
+// let apiRoutes = require("./api-routes");
+let apiRoutes = require("./api-routes")
+
 // Configure bodyparser to handle post requests
 app.use(bodyParser.urlencoded({
     extended: true
@@ -29,11 +31,6 @@ mongoose.connect(
     () => console.log("Connected to DB...")
     );
 
-// Connect to Mongoose and set connection variable
-// mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
-
-// Heroku Mongoose connection
-// mongoose.connect('mongodb://heroku_5686p02g:sia8l3fni4jmu7qbn0ac1t75mf@ds349857.mlab.com:49857/heroku_5686p02g', { useNewUrlParser: true });
 
 var db = mongoose.connection;
 
